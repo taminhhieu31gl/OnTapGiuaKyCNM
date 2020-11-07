@@ -9,7 +9,7 @@ $(document).ready(function(){
                 var currentRow=$(this).closest("tr"); 
             
                 var col1=currentRow.find("td:eq(0)").text(); 
-                var URL = "http://"+IP+":5035/api/xoaSinhVien";
+                var URL = "http://"+IP+":5035/api/delete";
                 var json = {
                     "id":col1
                 }

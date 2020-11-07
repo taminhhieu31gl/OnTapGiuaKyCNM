@@ -46,3 +46,22 @@ export const getDS = async (req, res) => {
         }
     })
 }
+
+export function xoa (req, res) {
+    var params = {
+        TableName: "GiuaKyLK",
+        Key: {
+            "id": req.body.id
+        }
+    };
+    docClient.delete(params, function (err, data) {
+        if (err) {
+            console.log("users::delete::error - " + JSON.stringify(err, null, 2));
+        } else {
+            res.status(200).json({
+                status: 200,
+                message: "xoá thành công",
+            }); 
+        }
+    });
+}
