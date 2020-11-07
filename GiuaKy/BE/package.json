@@ -1,0 +1,17 @@
+{
+  "type": "module",
+  "name": "giuaky",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.787.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1"
+  }
+}
