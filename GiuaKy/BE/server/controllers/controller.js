@@ -65,3 +65,31 @@ export function xoa (req, res) {
         }
     });
 }
+
+export const update = async (req, res) => {
+    console.log(req.body);
+    var params = {
+        TableName: "GiuaKyLK",
+        Key: { "id": req.body.id },
+        UpdateExpression: "set ten_sinhvien = :byTen, namsinh = :byNamsinh, ma_lop = :byMaLop, ma_sinhvien = :byMaSinhVien",
+        ExpressionAttributeValues: {
+            ":byTen": req.body.ten_sinhvien,
+            ":byNamsinh": req.body.namsinh,
+            ":byMaLop" : req.body.ma_lop,
+            ":byMaSinhVien" : req.body.ma_sinhvien,
+        },
+        ReturnValues: "UPDATED_NEW"
+
+    };
+    docClient.update(params, function (err, data) {
+        if (err) {
+            return err;
+        } else {
+            res.status(200).json({
+                status: 200,
+                message: "sửa thành công",
+                data: data.Attributes
+            });  
+        }
+    });
+}
